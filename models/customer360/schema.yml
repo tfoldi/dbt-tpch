@@ -8,7 +8,9 @@ sources:
     tables:
       - name: customer
       - name: nation
+      - name: region
 
 models:
+    - name: customer_per_nation
     - name: customer_per_region
 

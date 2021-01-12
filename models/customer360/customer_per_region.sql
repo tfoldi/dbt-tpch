@@ -1,5 +1,2 @@
-
-select count(1) nation_count, n_name, n_nationkey, n_regionkey from 
-{{ source('tpch_raw','customer')}} c inner join {{source('tpch_raw', 'nation')}} n
-on (c.c_nationkey = n.n_nationkey) 
-group by 2,3,4
+select count(*) region_count, r_name 
+from {{ref('customer_per_nation')}} inner join {{source('tpch-raw','region')}}
