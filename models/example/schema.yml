@@ -1,13 +1,6 @@
 
 version: 2
 
-sources:
-  - name: tpch_raw
-    description: tpc-h dataset from snowflake share
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF10
-    tables:
-      - name: customer
 
 models:
     - name: my_first_dbt_model
