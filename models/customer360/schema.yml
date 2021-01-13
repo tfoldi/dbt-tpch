@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: tpch_raw
+    description: tpc-h dataset from snowflake share
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF10
+    tables:
+      - name: customer
+      - name: nation
+      - name: region
+
+models:
+    - name: customer_per_nation
+    - name: customer_per_region
+
