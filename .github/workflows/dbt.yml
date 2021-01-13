@@ -20,7 +20,7 @@ jobs:
           python-version: "3.7.x"
       - run: pip3 install dbt
       - run: dbt --version
-      - run: 'mkdir ~/.dbt ; echo "$PROFILES" > ./.dbt/profiles.yml'
+      - run: 'mkdir ~/.dbt ; echo "$PROFILES" > ~/.dbt/profiles.yml'
         shell: bash
         env:
           KEYFILE: ${{secrets.PROFILES}}
