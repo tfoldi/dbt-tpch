@@ -23,6 +23,6 @@ jobs:
       - run: 'mkdir ~/.dbt ; echo "$PROFILES" > ~/.dbt/profiles.yml'
         shell: bash
         env:
-          KEYFILE: ${{secrets.PROFILES}}
+          PROFILES: ${{secrets.PROFILES}}
       - run: dbt run --models customer360
       - run: dbt test --models customer360
