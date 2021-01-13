@@ -1,0 +1,28 @@
+name: dbt
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  dbt:
+    name: dbt
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.7.x"
+      - run: pip3 install dbt
+      - run: dbt --version
+      - run: 'mkdir ~/.dbt ; echo "$PROFILES" > ./.dbt/profiles.yml'
+        shell: bash
+        env:
+          KEYFILE: ${{secrets.PROFILES}}
+      - run: dbt run --models customer360
+      - run: dbt test --models customer360
