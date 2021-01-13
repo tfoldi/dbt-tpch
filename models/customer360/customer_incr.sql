@@ -13,6 +13,6 @@ from {{source('tpch_raw','orders')}}
 {% if is_incremental() %}
 
   -- this filter will only be applied on an incremental run
-  where O_ORDERKEY > (select max(O_ORDERDATE) from {{ this }})
+  where O_ORDERDATE > (select max(O_ORDERDATE) from {{ this }})
 
 {% endif %}
