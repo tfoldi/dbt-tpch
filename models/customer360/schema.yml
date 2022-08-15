@@ -4,7 +4,7 @@ sources:
   - name: tpch_raw
     description: tpc-h dataset from snowflake share
     database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF10
+    schema: TPCH_SF1
     tables:
       - name: customer
       - name: nation
